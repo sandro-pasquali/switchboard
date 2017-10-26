@@ -1,0 +1,13 @@
+'use strict';
+
+let env = process.env;
+
+module.exports = {
+	TWILIO_AUTH_TOKEN: env.TWILIO_AUTH_TOKEN,
+	TWILIO_DEFAULT_FROM: env.TWILIO_DEFAULT_FROM,
+	TWILIO_SID: env.TWILIO_SID,
+	TWILIO_PHONE_NUMBER_SID: env.TWILIO_PHONE_NUMBER_SID,
+	PORT: env.PORT,
+	SOCK_PORT: env.SOCK_PORT,
+	URL: env.URL
+};
