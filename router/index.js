@@ -23,7 +23,7 @@ function responder(req, res) {
 }
 
 server.get('/', responder);
-server.head('/h', responder);
+server.head('/', responder);
 
 // process.env.PORT is set by heroku (add it yourself if hosting elsewhere)
 //
