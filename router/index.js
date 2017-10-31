@@ -18,9 +18,12 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
-server.get('/', (req, res) => {
+function responder(req, res) {
 	res.send(200, 'Switchboard is active');
-});
+}
+
+server.get('/', responder);
+server.head('/h', responder);
 
 // process.env.PORT is set by heroku (add it yourself if hosting elsewhere)
 //
@@ -42,7 +45,6 @@ require('./Db')((db, dbApi) => {
 	// Configure the socket listener for client connections
 	//
 	let wss = new SServer(server);
-	let clientSocket;
 	
 	wss.on("connection", clientConn => {
 		

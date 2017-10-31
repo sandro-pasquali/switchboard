@@ -8,8 +8,8 @@ module.exports = function(server, dbApi) {
 		
 	let smsUrl = env.URL + '/smswebhook';
 
-	// Set up the webhook on Twilio. If it doesn't succeed the bound
-	// route will never be called.
+	// Create the webhook on Twilio. If it doesn't succeed the bound
+	// route will never be called. TODO: maybe catch this?
 	//
 	twilioAPI.incomingPhoneNumbers(env.TWILIO_PHONE_NUMBER_SID).update({
 		smsUrl: smsUrl
